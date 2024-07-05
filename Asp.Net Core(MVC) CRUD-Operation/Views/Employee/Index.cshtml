@@ -1,0 +1,21 @@
+﻿@model List<Asp.Net_Core_MVC__CRUD_Operation.Models.Employee>;
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Departmnet</th>
+    </tr>
+    @foreach(var res in Model)
+    {
+        <tr>
+            <td>@res.EmployeeId</td>
+            <td>@res.EmployeeName</td>
+            <td>@res.EmployeeAge</td>
+            <td>@res.Department</td>
+        </tr>
+    }
+    <div>
+        <button class="btn btn-success"><a asp-controller="Employee" asp-action="AddEmployee" class="text-white fw-bold text-decoration-none">Add Employee</a></button>
+    </div>
+</table>

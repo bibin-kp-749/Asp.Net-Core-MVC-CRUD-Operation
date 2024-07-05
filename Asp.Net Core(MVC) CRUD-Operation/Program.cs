@@ -1,10 +1,13 @@
 using Asp.Net_Core_MVC__CRUD_Operation.Db;
+using Asp.Net_Core_MVC__CRUD_Operation.Repository;
+using Asp.Net_Core_MVC__CRUD_Operation.Repository.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<EmployeeDbContext>();
+builder.Services.AddScoped<IEmloyeeService,EmployeeService>();
 
 var app = builder.Build();
 
